@@ -21,4 +21,4 @@ Fitur fitur yang terdapat didalam aplikasi ini :
   - membayar denda
 
 
-Created Kelompok 4 Pemrograman Website
+Created by Kelompok 4 Pemrograman Website
