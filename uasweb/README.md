@@ -1,7 +1,7 @@
 # Sistem-Perpustakaan-Sekolah
-Nama Project ini adalah : CuyPerpus
+Nama Project ini adalah : PerpusRek
 
-CuyPerpus adalah sebuah aplikasi berbasis website yang memberikan pelayanan berupa sistem peminjaman dan pengelolaan buku perpustakaan.
+PerpusRek adalah sebuah aplikasi berbasis website yang memberikan pelayanan berupa sistem peminjaman dan pengelolaan buku perpustakaan.
 
 website ini dibuat menggunakan framework bootstrap, javascript, php dan database mysql.
 
