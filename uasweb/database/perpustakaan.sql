@@ -111,7 +111,7 @@ INSERT INTO `kategori_buku` (`kategori`) VALUES
 --
 
 CREATE TABLE `member` (
-  `nisn` int(11) NOT NULL,
+  `npm` int(15) NOT NULL,
   `kode_member` varchar(12) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -126,7 +126,7 @@ CREATE TABLE `member` (
 -- Dumping data untuk tabel `member`
 --
 
-INSERT INTO `member` (`nisn`, `kode_member`, `nama`, `password`, `jenis_kelamin`, `kelas`, `jurusan`, `no_tlp`, `tgl_pendaftaran`) VALUES
+INSERT INTO `member` (`npm`, `kode_member`, `nama`, `password`, `jenis_kelamin`, `kelas`, `jurusan`, `no_tlp`, `tgl_pendaftaran`) VALUES
 (202301, 'mem01', 'mulyani satya bhakti', 'wakwaw0102', 'Perempuan', 'XI', 'Rekayasa Perangkat Lunak', '081383877025', '2024-04-05');
 
 -- --------------------------------------------------------
@@ -138,7 +138,7 @@ INSERT INTO `member` (`nisn`, `kode_member`, `nama`, `password`, `jenis_kelamin`
 CREATE TABLE `peminjaman` (
   `id_peminjaman` int(11) NOT NULL,
   `id_buku` varchar(20) NOT NULL,
-  `nisn` int(11) NOT NULL,
+  `npm` int(15) NOT NULL,
   `id_admin` int(11) NOT NULL,
   `tgl_peminjaman` date NOT NULL,
   `tgl_pengembalian` date NOT NULL
@@ -154,7 +154,7 @@ CREATE TABLE `pengembalian` (
   `id_pengembalian` int(11) NOT NULL,
   `id_peminjaman` int(11) NOT NULL,
   `id_buku` varchar(20) NOT NULL,
-  `nisn` int(11) NOT NULL,
+  `npm` int(15) NOT NULL,
   `id_admin` int(11) NOT NULL,
   `buku_kembali` date NOT NULL,
   `keterlambatan` enum('YA','TIDAK') NOT NULL,
@@ -189,7 +189,7 @@ ALTER TABLE `kategori_buku`
 -- Indeks untuk tabel `member`
 --
 ALTER TABLE `member`
-  ADD PRIMARY KEY (`nisn`),
+  ADD PRIMARY KEY (`npm`),
   ADD UNIQUE KEY `kode_member` (`kode_member`);
 
 --
@@ -198,7 +198,7 @@ ALTER TABLE `member`
 ALTER TABLE `peminjaman`
   ADD PRIMARY KEY (`id_peminjaman`),
   ADD KEY `id_buku` (`id_buku`),
-  ADD KEY `nisn` (`nisn`),
+  ADD KEY `npm` (`npm`),
   ADD KEY `id_admin` (`id_admin`);
 
 --
@@ -208,7 +208,7 @@ ALTER TABLE `pengembalian`
   ADD PRIMARY KEY (`id_pengembalian`),
   ADD KEY `id_peminjaman` (`id_peminjaman`),
   ADD KEY `id_buku` (`id_buku`),
-  ADD KEY `nisn` (`nisn`),
+  ADD KEY `npm` (`npm`),
   ADD KEY `id_admin` (`id_admin`);
 
 --
@@ -248,7 +248,7 @@ ALTER TABLE `buku`
 --
 ALTER TABLE `peminjaman`
   ADD CONSTRAINT `peminjaman_ibfk_1` FOREIGN KEY (`id_buku`) REFERENCES `buku` (`id_buku`),
-  ADD CONSTRAINT `peminjaman_ibfk_2` FOREIGN KEY (`nisn`) REFERENCES `member` (`nisn`),
+  ADD CONSTRAINT `peminjaman_ibfk_2` FOREIGN KEY (`npm`) REFERENCES `member` (`npm`),
   ADD CONSTRAINT `peminjaman_ibfk_3` FOREIGN KEY (`id_admin`) REFERENCES `admin` (`id`);
 
 --
@@ -256,7 +256,7 @@ ALTER TABLE `peminjaman`
 --
 ALTER TABLE `pengembalian`
   ADD CONSTRAINT `pengembalian_ibfk_2` FOREIGN KEY (`id_buku`) REFERENCES `buku` (`id_buku`),
-  ADD CONSTRAINT `pengembalian_ibfk_3` FOREIGN KEY (`nisn`) REFERENCES `member` (`nisn`),
+  ADD CONSTRAINT `pengembalian_ibfk_3` FOREIGN KEY (`npm`) REFERENCES `member` (`npm`),
   ADD CONSTRAINT `pengembalian_ibfk_4` FOREIGN KEY (`id_admin`) REFERENCES `admin` (`id`);
 COMMIT;
 
