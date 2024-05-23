@@ -1,9 +1,9 @@
 <?php
 // Halaman pengelolaan peminjaman buku perpustakaan
 require "../../config/config.php";
-$dataPeminjam = queryReadData("SELECT peminjaman.id_peminjaman, peminjaman.id_buku, buku.judul, peminjaman.nisn, member.nama, member.kelas, member.jurusan, peminjaman.id_admin,  peminjaman.tgl_peminjaman, peminjaman.tgl_pengembalian 
+$dataPeminjam = queryReadData("SELECT peminjaman.id_peminjaman, peminjaman.id_buku, buku.judul, peminjaman.npm, member.nama, member.kelas, member.jurusan, peminjaman.id_admin,  peminjaman.tgl_peminjaman, peminjaman.tgl_pengembalian 
 FROM peminjaman 
-INNER JOIN member ON peminjaman.nisn = member.nisn
+INNER JOIN member ON peminjaman.npm = member.npm
 INNER JOIN buku ON peminjaman.id_buku = buku.id_buku");
 ?>
 
@@ -39,9 +39,9 @@ INNER JOIN buku ON peminjaman.id_buku = buku.id_buku");
             <th class="bg-primary text-light">Id Peminjaman</th>
             <th class="bg-primary text-light">Id Buku</th>
             <th class="bg-primary text-light">Judul Buku</th>
-            <th class="bg-primary text-light">Nisn Siswa</th>
-            <th class="bg-primary text-light">Nama siswa</th>
-            <th class="bg-primary text-light">Kelas</th>
+            <th class="bg-primary text-light">Npm Mahasiswa</th>
+            <th class="bg-primary text-light">Nama Mahasiswa</th>
+            <th class="bg-primary text-light">Semester</th>
             <th class="bg-primary text-light">Jurusan</th>
             <th class="bg-primary text-light">Id Admin</th>
             <th class="bg-primary text-light">Tanggal Peminjaman</th>
@@ -53,9 +53,9 @@ INNER JOIN buku ON peminjaman.id_buku = buku.id_buku");
        <td><?= $item["id_peminjaman"]; ?></td>
       <td><?= $item["id_buku"]; ?></td>
       <td><?= $item["judul"]; ?></td>
-      <td><?= $item["nisn"]; ?></td>
+      <td><?= $item["npm"]; ?></td>
       <td><?= $item["nama"]; ?></td>
-      <td><?= $item["kelas"]; ?></td>
+      <td><?= $item["semester"]; ?></td>
       <td><?= $item["jurusan"]; ?></td>
       <td><?= $item["id_admin"]; ?></td>
       <td><?= $item["tgl_peminjaman"]; ?></td>
