@@ -111,7 +111,7 @@ function search($keyword) {
   id_buku LIKE '%$keyword%' OR
   judul LIKE '%$keyword%' OR
   kategori LIKE '%$keyword%' OR
-  nisn LIKE '%$keyword%' OR
+  npm LIKE '%$keyword%' OR
   nama LIKE '%$keyword%' OR
   nama_admin LIKE '%$keyword%' OR
   tgl_pengembalian LIKE '%$keyword%' OR
@@ -123,7 +123,7 @@ function search($keyword) {
 function searchMember ($keyword) {
      // search member terdaftar || admin
    $searchMember = "SELECT * FROM member WHERE 
-   nisn LIKE '%$keyword%' OR 
+   npm LIKE '%$keyword%' OR 
    kode_member LIKE '%$keyword%' OR
    nama LIKE '%$keyword%' OR 
    jurusan LIKE '%$keyword%'
@@ -211,12 +211,12 @@ function pinjamBuku($dataBuku) {
   global $connection;
   
   $idBuku = $dataBuku["id_buku"];
-  $nisn = $dataBuku["nisn"];
+  $npm = $dataBuku["npm"];
   $idAdmin = $dataBuku["id"];
   $tglPinjam = $dataBuku["tgl_peminjaman"];
   $tglKembali = $dataBuku["tgl_pengembalian"];
   // cek apakah user memiliki denda 
-  $cekDenda = mysqli_query($connection, "SELECT denda FROM pengembalian WHERE nisn = $nisn && denda > 0");
+  $cekDenda = mysqli_query($connection, "SELECT denda FROM pengembalian WHERE npm = $npm && denda > 0");
   if(mysqli_num_rows($cekDenda) > 0) {
     $item = mysqli_fetch_assoc($cekDenda);
     $jumlahDenda = $item["denda"];
@@ -228,7 +228,7 @@ function pinjamBuku($dataBuku) {
     }
   }
   // cek batas user meminjam buku berdasarkan nisn
-  $nisnResult = mysqli_query($connection, "SELECT nisn FROM peminjaman WHERE nisn = $nisn");
+  $npmResult = mysqli_query($connection, "SELECT npm FROM peminjaman WHERE npm = $npm");
   if(mysqli_fetch_assoc($nisnResult)) {
     echo "<script>
     alert('Anda sudah meminjam buku, Harap kembalikan dahulu buku yg anda pinjam!');
@@ -236,7 +236,7 @@ function pinjamBuku($dataBuku) {
     return 0;
   }
   
-  $queryPinjam = "INSERT INTO peminjaman VALUES(null, '$idBuku', $nisn, $idAdmin, '$tglPinjam', '$tglKembali')";
+  $queryPinjam = "INSERT INTO peminjaman VALUES(null, '$idBuku', $npm, $idAdmin, '$tglPinjam', '$tglKembali')";
   mysqli_query($connection, $queryPinjam);
   return mysqli_affected_rows($connection);
 }
@@ -248,7 +248,7 @@ function pengembalian($dataBuku) {
   // Variabel pengembalian
   $idPeminjaman = $dataBuku["id_peminjaman"];
   $idBuku = $dataBuku["id_buku"];
-  $nisn = $dataBuku["nisn"];
+  $npm = $dataBuku["npm"];
   $idAdmin = $dataBuku["id_admin"];
   $tenggatPengembalian = $dataBuku["tgl_pengembalian"];
   $bukuKembali = $dataBuku["buku_kembali"];
@@ -265,7 +265,7 @@ function pengembalian($dataBuku) {
   $hapusDataPeminjam = "DELETE FROM peminjaman WHERE id_peminjaman = $idPeminjaman";
 
   // Memasukkan data kedalam tabel pengembalian
-  $queryPengembalian = "INSERT INTO pengembalian VALUES(null, $idPeminjaman, '$idBuku', $nisn, $idAdmin, '$bukuKembali', '$keterlambatan', $denda)";
+  $queryPengembalian = "INSERT INTO pengembalian VALUES(null, $idPeminjaman, '$idBuku', $npm, $idAdmin, '$bukuKembali', '$keterlambatan', $denda)";
 
   
   mysqli_query($connection, $hapusDataPeminjam);
