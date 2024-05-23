@@ -1,9 +1,9 @@
 <?php 
 require "../../config/config.php"; 
-$dataDenda = queryReadData("SELECT pengembalian.id_pengembalian, pengembalian.id_buku, buku.judul, pengembalian.nisn, member.nama, member.jurusan, admin.nama_admin, pengembalian.buku_kembali, pengembalian.keterlambatan, pengembalian.denda
+$dataDenda = queryReadData("SELECT pengembalian.id_pengembalian, pengembalian.id_buku, buku.judul, pengembalian.npm, member.nama, member.jurusan, admin.nama_admin, pengembalian.buku_kembali, pengembalian.keterlambatan, pengembalian.denda
 FROM pengembalian
 INNER JOIN buku ON pengembalian.id_buku = buku.id_buku
-INNER JOIN member ON pengembalian.nisn = member.nisn
+INNER JOIN member ON pengembalian.npm = member.npm
 INNER JOIN admin ON pengembalian.id_admin = admin.id
 WHERE pengembalian.denda > 0");
 ?>
@@ -37,8 +37,8 @@ WHERE pengembalian.denda > 0");
       <tr>
         <th class="bg-primary text-light">id buku</th>
         <th class="bg-primary text-light">Judul buku</th>
-        <th class="bg-primary text-light">Nisn</th>
-        <th class="bg-primary text-light">Nama siswa</th>
+        <th class="bg-primary text-light">NPM</th>
+        <th class="bg-primary text-light">Nama Mahasiswa</th>
         <th class="bg-primary text-light">Jurusan</th>
         <th class="bg-primary text-light">Nama admin</th>
         <th class="bg-primary text-light">Hari pengembalian</th>
@@ -50,7 +50,7 @@ WHERE pengembalian.denda > 0");
       <tr>
         <td><?= $item["id_buku"]; ?></td>
         <td><?= $item["judul"]; ?></td>
-        <td><?= $item["nisn"]; ?></td>
+        <td><?= $item["npm"]; ?></td>
         <td><?= $item["nama"]; ?></td>
         <td><?= $item["jurusan"]; ?></td>
         <td><?= $item["nama_admin"]; ?></td>
