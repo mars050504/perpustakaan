@@ -49,11 +49,11 @@ if(isset($_POST["search"]) ) {
         <table class="table table-striped table-hover">
         <thead class="text-center">
           <tr>
-            <th class="bg-primary text-light">Nisn</th>
+            <th class="bg-primary text-light">NPM</th>
             <th class="bg-primary text-light">Kode</th>
             <th class="bg-primary text-light">Nama</th>
             <th class="bg-primary text-light">Jenis Kelamin</th>
-            <th class="bg-primary text-light">Kelas</th>
+            <th class="bg-primary text-light">Semester</th>
             <th class="bg-primary text-light">Jurusan</th>
             <th class="bg-primary text-light">No Telepon</th>
             <th class="bg-primary text-light">Pendaftaran</th>
@@ -62,17 +62,17 @@ if(isset($_POST["search"]) ) {
         </thead>
       <?php foreach($member as $item) : ?>
       <tr>
-        <td><?=$item["nisn"];?></td>
+        <td><?=$item["npm"];?></td>
         <td><?=$item["kode_member"];?></td>
         <td><?=$item["nama"];?></td>
         <td><?=$item["jenis_kelamin"];?></td>
-        <td><?=$item["kelas"];?></td>
+        <td><?=$item["semester"];?></td>
         <td><?=$item["jurusan"];?></td>
         <td><?=$item["no_tlp"];?></td>
         <td><?=$item["tgl_pendaftaran"];?></td>
         <td>
           <div class="action">
-             <a href="deleteMember.php?id=<?= $item["nisn"]; ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data member ?');"><i class="fa-solid fa-trash"></i></a>
+             <a href="deleteMember.php?id=<?= $item["npm"]; ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data member ?');"><i class="fa-solid fa-trash"></i></a>
            </div>
         </td>
        </tr>
