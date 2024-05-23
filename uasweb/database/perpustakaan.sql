@@ -116,7 +116,7 @@ CREATE TABLE `member` (
   `nama` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `jenis_kelamin` varchar(20) NOT NULL,
-  `kelas` varchar(5) NOT NULL,
+  `semester` varchar(5) NOT NULL,
   `jurusan` varchar(50) NOT NULL,
   `no_tlp` varchar(15) NOT NULL,
   `tgl_pendaftaran` date NOT NULL
@@ -126,8 +126,8 @@ CREATE TABLE `member` (
 -- Dumping data untuk tabel `member`
 --
 
-INSERT INTO `member` (`npm`, `kode_member`, `nama`, `password`, `jenis_kelamin`, `kelas`, `jurusan`, `no_tlp`, `tgl_pendaftaran`) VALUES
-(202301, 'mem01', 'mulyani satya bhakti', 'wakwaw0102', 'Perempuan', 'XI', 'Rekayasa Perangkat Lunak', '081383877025', '2024-04-05');
+INSERT INTO `member` (`npm`, `kode_member`, `nama`, `password`, `jenis_kelamin`, `semester`, `jurusan`, `no_tlp`, `tgl_pendaftaran`) VALUES
+(202301, '2208101000', 'mulyani satya bhakti', 'wakwaw0102', 'Perempuan', '5', 'Sistem Informasi', '081383877025', '2024-04-05');
 
 -- --------------------------------------------------------
 
