@@ -7,10 +7,10 @@ if(!isset($_SESSION["signIn"]) ) {
 }
 require "../../config/config.php";
 $idPeminjaman = $_GET["id"];
-$query = queryReadData("SELECT peminjaman.id_peminjaman, peminjaman.id_buku, buku.judul, peminjaman.nisn, member.nama, peminjaman.id_admin, peminjaman.tgl_peminjaman, peminjaman.tgl_pengembalian
+$query = queryReadData("SELECT peminjaman.id_peminjaman, peminjaman.id_buku, buku.judul, peminjaman.npm, member.nama, peminjaman.id_admin, peminjaman.tgl_peminjaman, peminjaman.tgl_pengembalian
 FROM peminjaman
 INNER JOIN buku ON peminjaman.id_buku = buku.id_buku
-INNER JOIN member ON peminjaman.nisn = member.nisn
+INNER JOIN member ON peminjaman.npm = member.npm
 WHERE peminjaman.id_peminjaman = $idPeminjaman");
 
 // Jika tombol submit kembalikan diklik
@@ -70,8 +70,8 @@ if(isset($_POST["kembalikan"]) ) {
     
   <div class="d-flex flex-wrap gap-3">
     <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Nisn Siswa</label>
-      <input type="number" class="form-control" placeholder="Nisn Siswa" name="nisn" id="nisn" value="<?= $item["nisn"]; ?>" readonly>
+      <label for="exampleFormControlInput1" class="form-label">Npm Siswa</label>
+      <input type="number" class="form-control" placeholder="Npm Siswa" name="nisn" id="nisn" value="<?= $item["nisn"]; ?>" readonly>
     </div>
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Nama Siswa</label>
