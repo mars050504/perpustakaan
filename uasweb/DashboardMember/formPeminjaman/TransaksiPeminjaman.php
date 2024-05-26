@@ -6,13 +6,13 @@ if(!isset($_SESSION["signIn"]) ) {
   exit;
 }
 require "../../config/config.php";
-$akunMember = $_SESSION["member"]["nisn"];
-$dataPinjam = queryReadData("SELECT peminjaman.id_peminjaman, peminjaman.id_buku, buku.judul, peminjaman.nisn, member.nama, admin.nama_admin, peminjaman.tgl_peminjaman, peminjaman.tgl_pengembalian
+$akunMember = $_SESSION["member"]["npm"];
+$dataPinjam = queryReadData("SELECT peminjaman.id_peminjaman, peminjaman.id_buku, buku.judul, peminjaman.npm, member.nama, admin.nama_admin, peminjaman.tgl_peminjaman, peminjaman.tgl_pengembalian
 FROM peminjaman
 INNER JOIN buku ON peminjaman.id_buku = buku.id_buku
-INNER JOIN member ON peminjaman.nisn = member.nisn
+INNER JOIN member ON peminjaman.npm = member.npm
 INNER JOIN admin ON peminjaman.id_admin = admin.id
-WHERE peminjaman.nisn = $akunMember");
+WHERE peminjaman.npm = $akunMember");
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +45,7 @@ WHERE peminjaman.nisn = $akunMember");
         <th class="bg-primary text-light">Id Peminjaman</th>
         <th class="bg-primary text-light">Id Buku</th>
         <th class="bg-primary text-light">Judul Buku</th>
-        <th class="bg-primary text-light">Nisn</th>
+        <th class="bg-primary text-light">Npm</th>
         <th class="bg-primary text-light">Nama</th>
         <th class="bg-primary text-light">Nama Admin</th>
         <th class="bg-primary text-light">Tanggal Peminjaman</th>
@@ -59,7 +59,7 @@ WHERE peminjaman.nisn = $akunMember");
         <td><?= $item["id_peminjaman"]; ?></td>
         <td><?= $item["id_buku"]; ?></td>
         <td><?= $item["judul"]; ?></td>
-        <td><?= $item["nisn"]; ?></td>
+        <td><?= $item["npm"]; ?></td>
         <td><?= $item["nama"]; ?></td>
         <td><?= $item["nama_admin"]; ?></td>
         <td><?= $item["tgl_peminjaman"]; ?></td>
