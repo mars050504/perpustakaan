@@ -24,7 +24,7 @@ function signUp($data) {
   
     // cek npm sudah ada / belum 
   $npmResult = mysqli_query($connect, "SELECT npm FROM member WHERE npm = $npm");
-  if(mysqli_fetch_assoc($nisnResult)) {
+  if(mysqli_fetch_assoc($npmResult)) {
     echo "<script>
     alert('Npm sudah terdaftar, silahkan gunakan npm lain!');
     </script>";
