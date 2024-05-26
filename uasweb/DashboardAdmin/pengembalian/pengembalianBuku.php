@@ -1,10 +1,10 @@
 <?php 
 //Halaman pengelolaan pengembalian Buku Perustakaaan
 require "../../config/config.php";
-$dataPeminjam = queryReadData("SELECT pengembalian.id_pengembalian, pengembalian.id_buku, buku.judul, buku.kategori, pengembalian.nisn, member.nama, member.kelas, member.jurusan, admin.nama_admin, pengembalian.buku_kembali, pengembalian.keterlambatan, pengembalian.denda
+$dataPeminjam = queryReadData("SELECT pengembalian.id_pengembalian, pengembalian.id_buku, buku.judul, buku.kategori, pengembalian.npm, member.nama, member.semester, member.jurusan, admin.nama_admin, pengembalian.buku_kembali, pengembalian.keterlambatan, pengembalian.denda
 FROM pengembalian
 INNER JOIN buku ON pengembalian.id_buku = buku.id_buku
-INNER JOIN member ON pengembalian.nisn = member.nisn
+INNER JOIN member ON pengembalian.npm = member.npm
 INNER JOIN admin ON pengembalian.id_admin = admin.id")
 ?>
 
@@ -40,9 +40,9 @@ INNER JOIN admin ON pengembalian.id_admin = admin.id")
         <th class="bg-primary text-light">Id Buku</th>
         <th class="bg-primary text-light">Judul Buku</th>
         <th class="bg-primary text-light">Kategori</th>
-        <th class="bg-primary text-light">Nisn</th>
+        <th class="bg-primary text-light">Npm</th>
         <th class="bg-primary text-light">Nama Siswa</th>
-        <th class="bg-primary text-light">Kelas</th>
+        <th class="bg-primary text-light">Semester</th>
         <th class="bg-primary text-light">Jurusan</th>
         <th class="bg-primary text-light">Nama Admin</th>
         <th class="bg-primary text-light">Tanggal Pengembalian</th>
@@ -57,9 +57,9 @@ INNER JOIN admin ON pengembalian.id_admin = admin.id")
         <td><?= $item["id_buku"]; ?></td>
         <td><?= $item["judul"]; ?></td>
         <td><?= $item["kategori"]; ?></td>
-        <td><?= $item["nisn"]; ?></td>
+        <td><?= $item["npm"]; ?></td>
         <td><?= $item["nama"]; ?></td>
-        <td><?= $item["kelas"]; ?></td>
+        <td><?= $item["semester"]; ?></td>
         <td><?= $item["jurusan"]; ?></td>
         <td><?= $item["nama_admin"]; ?></td>
         <td><?= $item["buku_kembali"]; ?></td>
