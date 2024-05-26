@@ -6,11 +6,11 @@ if(!isset($_SESSION["signIn"]) ) {
   exit;
 }
 require "../../config/config.php";
-$akunMember = $_SESSION["member"]["nisn"];
-$dataPengembalian = queryReadData("SELECT pengembalian.id_pengembalian, pengembalian.id_buku, buku.judul, buku.kategori, pengembalian.nisn, member.nama, admin.nama_admin, pengembalian.buku_kembali, pengembalian.keterlambatan, pengembalian.denda
+$akunMember = $_SESSION["member"]["npm"];
+$dataPengembalian = queryReadData("SELECT pengembalian.id_pengembalian, pengembalian.id_buku, buku.judul, buku.kategori, pengembalian.npm, member.nama, admin.nama_admin, pengembalian.buku_kembali, pengembalian.keterlambatan, pengembalian.denda
 FROM pengembalian
 INNER JOIN buku ON pengembalian.id_buku = buku.id_buku
-INNER JOIN member ON pengembalian.nisn = member.nisn
+INNER JOIN member ON pengembalian.npm = member.npm
 INNER JOIN admin ON pengembalian.id_admin = admin.id
 WHERE pengembalian.nisn = $akunMember");
 
@@ -57,7 +57,7 @@ if(isset($_POST["search"]) ) {
         <th class="bg-primary text-light">Id Buku</th>
         <th class="bg-primary text-light">Judul Buku</th>
         <th class="bg-primary text-light">Kategori</th>
-        <th class="bg-primary text-light">Nisn</th>
+        <th class="bg-primary text-light">Npm</th>
         <th class="bg-primary text-light">Nama</th>
         <th class="bg-primary text-light">Nama Admin</th>
         <th class="bg-primary text-light">Tanggal Pengembalian</th>
@@ -71,7 +71,7 @@ if(isset($_POST["search"]) ) {
         <td><?= $item["id_buku"]; ?></td>
         <td><?= $item["judul"]; ?></td>
         <td><?= $item["kategori"]; ?></td>
-        <td><?= $item["nisn"]; ?></td>
+        <td><?= $item["npm"]; ?></td>
         <td><?= $item["nama"]; ?></td>
         <td><?= $item["nama_admin"]; ?></td>
         <td><?= $item["buku_kembali"]; ?></td>
