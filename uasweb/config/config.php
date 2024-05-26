@@ -184,10 +184,10 @@ function updateBuku($dataBuku) {
 }
 
 // Hapus member yang terdaftar
-function deleteMember($nisnMember) {
+function deleteMember($npmMember) {
   global $connection;
   
-  $deleteMember = "DELETE FROM member WHERE nisn = $nisnMember";
+  $deleteMember = "DELETE FROM member WHERE npm = $npmMember";
   mysqli_query($connection, $deleteMember);
   return mysqli_affected_rows($connection);
 }
