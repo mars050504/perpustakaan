@@ -73,12 +73,12 @@ if(isset($_POST["signUp"]) ) {
     <hr>
     <form action="" method="post" class="needs-validation" novalidate>
       <div class="mb-3">
-        <label for="validationCustom01" class="form-label">NISN</label>
+        <label for="validationCustom01" class="form-label">NPM</label>
         <div class="input-group">
           <span class="input-group-text"><i class="fa-solid fa-hashtag"></i></span>
-          <input type="number" class="form-control" name="nisn" id="validationCustom01" required>
+          <input type="number" class="form-control" name="npm" id="validationCustom01" required>
           <div class="invalid-feedback">
-            Nisn wajib diisi!
+            NPM wajib diisi!
           </div>
         </div>
       </div>
@@ -133,15 +133,25 @@ if(isset($_POST["signUp"]) ) {
         </div>
       </div>
       <div class="mb-3">
-        <label for="inputGroupSelect01" class="form-label">Kelas</label>
+        <label for="inputGroupSelect01" class="form-label">Semester</label>
         <div class="input-group">
           <label class="input-group-text" for="inputGroupSelect01">Kelas</label>
-          <select class="form-select" id="inputGroupSelect01" name="kelas">
+          <select class="form-select" id="inputGroupSelect01" name="semester">
             <option selected>Choose</option>
-            <option value="X">X</option>
-            <option value="XI">XI</option>
-            <option value="XII">XII</option>
-            <option value="XIII">XIII</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
           </select>
         </div>
       </div>
@@ -151,17 +161,17 @@ if(isset($_POST["signUp"]) ) {
           <label class="input-group-text" for="inputGroupSelect01">Jurusan</label>
           <select class="form-select" id="inputGroupSelect01" name="jurusan">
             <option selected>Choose</option>
-            <option value="Desain Gambar Mesin">Desain Gambar Mesin</option>
-            <option value="Teknik Pemesinan">Teknik Pemesinan</option>
-            <option value="Teknik Otomotif">Teknik Otomotif</option>
-            <option value="Desain Pemodelan Informasi Bangunan">Desain Pemodelan Informasi Bangunan</option>
-            <option value="Teknik Konstruksi Perumahan">Teknik Konstruksi Perumahan</option>
-            <option value="Teknik Tenaga Listrik">Teknik Tenaga Listrik</option>
-            <option value="Teknik Instalasi Tenaga Listrik">Teknik Instalasi Tenaga Listrik</option>
-            <option value="Teknik Komputer Jaringan">Teknik Komputer Jaringan</option>
-            <option value="Sistem Informatika Jaringan dan Aplikasi">Sistem Informatika Jaringan dan Aplikasi</option>
-            <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
+            <option value="Informatika">Informatika</option>
+            <option value="Teknik Mesin">Teknik Mesin</option>
+            <option value="Teknik Kimia">Teknik Kimia</option>
             <option value="Desain Komunikasi Visual">Desain Komunikasi Visual</option>
+            <option value="Teknik Industri">Teknik Industri</option>
+            <option value="Teknik Pangan">Teknik Pangan</option>
+            <option value="Teknik Lingkungan">Teknik Lingkungan</option>
+            <option value="Hukum">Hukum</option>
+            <option value="Sistem Informasi">Sistem Informasi</option>
+            <option value="Sains Data">Sains Data</option>
+            <option value="Administrasi Bisnis">Administrasi Bisnis</option>
           </select>
         </div>
       </div>
