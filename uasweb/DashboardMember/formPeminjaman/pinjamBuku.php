@@ -10,8 +10,8 @@ require "../../config/config.php";
 $idBuku = $_GET["id"];
 $query = queryReadData("SELECT * FROM buku WHERE id_buku = '$idBuku'");
 //Menampilkan data siswa yg sedang login
-$nisnSiswa = $_SESSION["member"]["nisn"];
-$dataSiswa = queryReadData("SELECT * FROM member WHERE nisn = $nisnSiswa");
+$npmSiswa = $_SESSION["member"]["npm"];
+$dataSiswa = queryReadData("SELECT * FROM member WHERE npm = $npmSiswa");
 $admin = queryReadData("SELECT * FROM admin");
 
 // Peminjaman 
@@ -110,8 +110,8 @@ if(isset($_POST["pinjam"]) ) {
         <form action="" method="post">
           <?php foreach ($dataSiswa as $item) : ?>
           <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Nisn</span>
-            <input type="number" class="form-control" placeholder="nisn" aria-label="nisn" aria-describedby="basic-addon1" value="<?= $item["nisn"]; ?>" readonly>
+            <span class="input-group-text" id="basic-addon1">Npm</span>
+            <input type="number" class="form-control" placeholder="npm" aria-label="npm" aria-describedby="basic-addon1" value="<?= $item["npm"]; ?>" readonly>
             </div>
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Kode Member</span>
@@ -161,8 +161,8 @@ if(isset($_POST["pinjam"]) ) {
           <?php endforeach; ?>
         <!-- Ambil data NISN user yang login-->
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Nisn</span>
-            <input type="number" name="nisn" class="form-control" placeholder="nisn" aria-label="nisn" aria-describedby="basic-addon1" value="<?php echo htmlentities($_SESSION["member"]["nisn"]); ?>" readonly>
+            <span class="input-group-text" id="basic-addon1">Npm</span>
+            <input type="number" name="npm" class="form-control" placeholder="npm" aria-label="npm" aria-describedby="basic-addon1" value="<?php echo htmlentities($_SESSION["member"]["npm"]); ?>" readonly>
         </div>
     <!--Ambil data id admin-->
     <select name="id" class="form-select" aria-label="Default select example">
