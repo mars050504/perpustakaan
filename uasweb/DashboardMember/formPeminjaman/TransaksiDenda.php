@@ -6,13 +6,13 @@ if(!isset($_SESSION["signIn"]) ) {
   exit;
 }
 require "../../config/config.php"; 
-$nisnSiswa = $_SESSION["member"]["nisn"];
-$dataDenda = queryReadData("SELECT pengembalian.id_pengembalian, pengembalian.id_peminjaman, pengembalian.id_buku, buku.judul, pengembalian.nisn, member.nama, admin.nama_admin, pengembalian.buku_kembali, pengembalian.keterlambatan, pengembalian.denda
+$npmSiswa = $_SESSION["member"]["npm"];
+$dataDenda = queryReadData("SELECT pengembalian.id_pengembalian, pengembalian.id_peminjaman, pengembalian.id_buku, buku.judul, pengembalian.npm, member.nama, admin.nama_admin, pengembalian.buku_kembali, pengembalian.keterlambatan, pengembalian.denda
 FROM pengembalian
 INNER JOIN buku ON pengembalian.id_buku = buku.id_buku
-INNER JOIN member ON pengembalian.nisn = member.nisn
+INNER JOIN member ON pengembalian.npm = member.npm
 INNER JOIN admin ON pengembalian.id_admin = admin.id
-WHERE pengembalian.nisn = $nisnSiswa && pengembalian.denda > 0");
+WHERE pengembalian.npm = $npmSiswa && pengembalian.denda > 0");
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +43,7 @@ WHERE pengembalian.nisn = $nisnSiswa && pengembalian.denda > 0");
       <tr>
         <th class="bg-primary text-light">id buku</th>
         <th class="bg-primary text-light">Judul buku</th>
-        <th class="bg-primary text-light">Nisn</th>
+        <th class="bg-primary text-light">Npm</th>
         <th class="bg-primary text-light">Nama siswa</th>
         <th class="bg-primary text-light">Nama admin</th>
         <th class="bg-primary text-light">Hari pengembalian</th>
@@ -56,7 +56,7 @@ WHERE pengembalian.nisn = $nisnSiswa && pengembalian.denda > 0");
       <tr>
         <td><?= $item["id_buku"]; ?></td>
         <td><?= $item["judul"]; ?></td>
-        <td><?= $item["nisn"]; ?></td>
+        <td><?= $item["npm"]; ?></td>
         <td><?= $item["nama"]; ?></td>
         <td><?= $item["nama_admin"]; ?></td>
         <td><?= $item["buku_kembali"]; ?></td>
