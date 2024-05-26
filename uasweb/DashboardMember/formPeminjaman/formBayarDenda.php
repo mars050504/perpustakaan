@@ -26,7 +26,7 @@ $dendaSiswa = $_GET["id"];
 $query = queryReadData("SELECT pengembalian.id_pengembalian, buku.judul, member.nama, pengembalian.buku_kembali, pengembalian.keterlambatan, pengembalian.denda
 FROM pengembalian
 INNER JOIN buku ON pengembalian.id_buku = buku.id_buku
-INNER JOIN member ON pengembalian.nisn = member.nisn
+INNER JOIN member ON pengembalian.npm = member.npm
 WHERE pengembalian.id_pengembalian = $dendaSiswa");
 
 ?>
