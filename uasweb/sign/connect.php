@@ -11,22 +11,22 @@ $connect = mysqli_connect($host, $username, $password, $database);
 function signUp($data) {
   global $connect;
   
-  $nisn = htmlspecialchars($data["nisn"]);
+  $npm = htmlspecialchars($data["npm"]);
   $kodeMember = htmlspecialchars($data["kode_member"]);
   $nama = htmlspecialchars(strtolower($data["nama"]));
   $password = mysqli_real_escape_string($connect, $data["password"]);
   $confirmPw = mysqli_real_escape_string($connect, $data["confirmPw"]);
   $jk = htmlspecialchars($data["jenis_kelamin"]);
-  $kelas = htmlspecialchars($data["kelas"]);
+  $semester = htmlspecialchars($data["semester"]);
   $jurusan = htmlspecialchars($data["jurusan"]);
   $noTlp = htmlspecialchars($data["no_tlp"]);
   $tglDaftar = $data["tgl_pendaftaran"];
   
-    // cek nisn sudah ada / belum 
-  $nisnResult = mysqli_query($connect, "SELECT nisn FROM member WHERE nisn = $nisn");
-  if(mysqli_fetch_assoc($nisnResult)) {
+    // cek npm sudah ada / belum 
+  $npmResult = mysqli_query($connect, "SELECT npm FROM member WHERE npm = $npm");
+  if(mysqli_fetch_assoc($npmResult)) {
     echo "<script>
-    alert('Nisn sudah terdaftar, silahkan gunakan nisn lain!');
+    alert('Npm sudah terdaftar, silahkan gunakan npm lain!');
     </script>";
     return 0;
   }
@@ -52,7 +52,7 @@ function signUp($data) {
   $password = password_hash($password, PASSWORD_DEFAULT);
   
   
-  $querySignUp = "INSERT INTO member VALUES($nisn, '$kodeMember', '$nama', '$password', '$jk', '$kelas', '$jurusan', '$noTlp', '$tglDaftar')";
+  $querySignUp = "INSERT INTO member VALUES($npm, '$kodeMember', '$nama', '$password', '$jk', '$semester', '$jurusan', '$noTlp', '$tglDaftar')";
   mysqli_query($connect, $querySignUp);
   return mysqli_affected_rows($connect);
   
