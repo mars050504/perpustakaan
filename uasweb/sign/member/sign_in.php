@@ -5,10 +5,10 @@ require "../../sign/connect.php";
 
 if (isset($_POST["signIn"])) {
   $nama = strtolower($_POST["nama"]);
-  $nisn = $_POST["nisn"];
+  $npm = $_POST["npm"];
   $password = $_POST["password"];
 
-  $result = mysqli_query($connect, "SELECT * FROM member WHERE nama = '$nama' AND nisn = $nisn");
+  $result = mysqli_query($connect, "SELECT * FROM member WHERE nama = '$nama' AND npm = $npm");
   $error = true;
 }
 ?>
@@ -91,9 +91,9 @@ if (isset($_POST["signIn"])) {
       <div class="mb-3">
         <div class="input-group">
           <span class="input-group-text"><i class="fa-solid fa-hashtag"></i></span>
-          <input type="number" class="form-control" name="nisn" placeholder="Type your NISN" required>
+          <input type="number" class="form-control" name="npm" placeholder="Type your NPM" required>
           <div class="invalid-feedback">
-            Masukkan NISN anda!
+            Masukkan NPM anda!
           </div>
         </div>
       </div>
@@ -111,7 +111,7 @@ if (isset($_POST["signIn"])) {
       <a href="../link_login.html" class="btn btn-secondary w-100">Kembali</a>
     </form>
     <?php if (isset($error)) : ?>
-      <div class="alert alert-danger mt-2" role="alert">Nama atau Nisn atau Password tidak sesuai!</div>
+      <div class="alert alert-danger mt-2" role="alert">Nama atau NPM atau Password tidak sesuai!</div>
     <?php endif; ?>
     <p class="text-center mt-3">Don't have an account yet? <a href="sign_up.php" class="text-decoration-none text-primary">Sign Up</a></p>
   </div>
