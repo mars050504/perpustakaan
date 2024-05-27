@@ -48,10 +48,6 @@ function signUp($data) {
     return 0;
   }
   
-  // Enkripsi password
-  $password = password_hash($password, PASSWORD_DEFAULT);
-  
-  
   $querySignUp = "INSERT INTO member VALUES($npm, '$kodeMember', '$nama', '$password', '$jk', '$semester', '$jurusan', '$noTlp', '$tglDaftar')";
   mysqli_query($connect, $querySignUp);
   return mysqli_affected_rows($connect);
