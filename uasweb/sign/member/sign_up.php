@@ -1,15 +1,12 @@
 <?php 
-if(isset($_POST["signUp"]) ) {
-  if(signUp($_POST) > 0) {
-    echo "<script>
-    alert('Sign Up berhasil!')
-    </script>";
-  } else {
-    echo "<script>
-    alert('Sign Up gagal!')
-    </script>";
-  }
+
+require 'C:\xampp\htdocs\uasweb\sign\connect.php';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  $userData = $_POST;
+  signUp($userData);
 }
+  
 ?>
 <!DOCTYPE html>
 <html lang="en">
