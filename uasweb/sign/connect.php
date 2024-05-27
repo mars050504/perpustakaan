@@ -58,4 +58,36 @@ function signUp($data) {
   
 }
 
+// Fungsi Sign In
+function signIn($data) {
+  global $connect;
+
+  $npm = htmlspecialchars($data["npm"]);
+  $password = mysqli_real_escape_string($connect, $data["password"]);
+
+  // cek apakah npm ada di database
+  $result = mysqli_query($connect, "SELECT * FROM member WHERE npm = '$npm'");
+  if (mysqli_num_rows($result) === 1) {
+      // cek password
+      $row = mysqli_fetch_assoc($result);
+      if ($row["password"] === $password) {
+          // set session
+          session_start();
+          $_SESSION["login"] = true;
+          $_SESSION["npm"] = $row["npm"];
+          return 1;
+      } else {
+          echo "<script>
+          alert('Password salah!');
+          </script>";
+          return 0;
+      }
+  } else {
+      echo "<script>
+      alert('NPM tidak terdaftar!');
+      </script>";
+      return 0;
+  }
+}
+
 ?>
