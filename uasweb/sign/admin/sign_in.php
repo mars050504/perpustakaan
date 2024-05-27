@@ -1,14 +1,29 @@
 <?php
 session_start();
 
-require "../../sign/connect.php";
+if(isset($_SESSION["signIn"]) ) {
+  header("Location: ../../DashboardAdmin/dashboardAdmin.php");
+  exit;
+}
 
-if (isset($_POST["signIn"])) {
+require "../../loginSystem/connect.php";
+
+if(isset($_POST["signIn"]) ) {
+  
   $nama = strtolower($_POST["nama_admin"]);
   $password = $_POST["password"];
-
-  $result = mysqli_query($connect, "SELECT * FROM admin WHERE nama_admin = '$nama' AND password = '$password'");
+  
+  $result = mysqli_query($connect, "SELECT * FROM admin WHERE nama_admin = '$nama' AND password = '$password' ");
+  
+  if(mysqli_num_rows($result) === 1) {
+    //SET SESSION 
+    $_SESSION["signIn"] = true;
+    $_SESSION["admin"]["nama_admin"] = $nama;
+    header("Location: ../../DashboardAdmin/dashboardAdmin.php");
+      exit;
+  }
   $error = true;
+  
 }
 ?>
 
