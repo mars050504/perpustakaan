@@ -38,18 +38,44 @@
     }
 
     .container-fluid {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #fff;
-            padding: 5px;
-            transition: transform 0.3s ease;
-        }
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      padding: 5px;
+      transition: transform 0.3s ease;
+    }
 
-        .scroll-down {
-            transform: translateY(-100%);
-        }
+    .scroll-down {
+      transform: translateY(-100%);
+    }
+
+    .book-img {
+  width: 300px;
+  height: 450px;
+  object-fit: cover;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px; /* ukuran lingkaran */
+  height: 40px; /* ukuran lingkaran */
+  border-radius: 50%; /* membuatnya menjadi lingkaran */
+  background-color: rgba(255, 255, 255, 0.5); /* warna latar belakang dengan opacity */
+  border: none;
+  color: black;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  margin-top: 3px; /* penyesuaian posisi ikon di tengah lingkaran */
+}
+
+
   </style>
 </head>
 
@@ -88,8 +114,45 @@
       <div class="col mt-5 text-center">
         <h2 class="fw-bold text-success custom-text-primary"><span class="text-primary">Perpus</span>Rek</h2>
         <p class="mb-4 custom-subtext">"Temukan Dunia Pengetahuan di Ujung Jari Anda: <br> Perpustakaan Online <span class="fw-bold">PerpusRek!!</span> Membawa Anda ke Dunia Buku Digital."</p>
-        <!-- <a class="btn btn-primary custom-btn" href="sign/link_login.html">Get started</a> -->
-        <img src="assets/membaca.jpg" width="450px" class="mt-6">
+        <!-- Image slider -->
+        <div id="spotlightCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row justify-content-center">
+                <div class="col-3">
+                  <img src="imgDB/654e4417e323e.jpeg" class="d-block w-100 book-img" alt="Book 1">
+                </div>
+                <div class="col-3">
+                  <img src="imgDB/654e402a8ad79.jpg" class="d-block w-100 book-img" alt="Book 2">
+                </div>
+                <div class="col-3">
+                  <img src="imgDB/654e46a08484e.jpg" class="d-block w-100 book-img" alt="Book 3">
+                </div>
+                <div class="col-3">
+                  <img src="imgDB/654e4f5e85f75.jpg" class="d-block w-100 book-img" alt="Book 4">
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row justify-content-center">
+                <div class="col-3">
+                  <img src="imgDB/654e456c2e275.jpg" class="d-block w-100 book-img" alt="Book 5">
+                </div>
+                <div class="col-3">
+                  <img src="imgDB/654e505d7eda4.jpg" class="d-block w-100 book-img" alt="Book 6">
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#spotlightCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#spotlightCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -104,7 +167,7 @@
         dan sumber daya belajar lainnya, semuanya hanya dalam genggaman Anda. Kami berdedikasi untuk memajukan literasi dan pembelajaran seumur hidup,
         dan kami ingin menjadi mitra Anda dalam perjalanan pembelajaran Anda. Aplikasi perpustakaan kami telah dirancang dengan antarmuka yang ramah
         pengguna, fitur pencarian canggih, dan koleksi konten yang terus berkembang untuk menginspirasi dan memberdayakan semua anggota komunitas kami</p>
-    </div>
+        </div>
     <div class="d-flex justify-content-center">
       <h3 class="text-secondary">Dikembangkan Oleh :</h3>
     </div>
@@ -132,12 +195,13 @@
       </div>
       <hr class="text-light mt-3">
       <div class="d-flex justify-content-center gap-4">
-        <a href="https://github.com/mars050504/perpustakaan" class="fs-3"><i class="fa-brands fa-github"></i></a>
+        <a href="" class="fs-3"><i class="fa-brands fa-github"></i></a>
         <a href="" class="fs-3"><i class="fa-brands fa-telegram"></i></a>
         <a href="" class="fs-3"><i class="fa-brands fa-instagram"></i></a>
       </div>
     </div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qZZoWY1cKTRlbDdDWmsMY1y5WOb3myjLBlRZpyc8xKfMBoHk6bCAc1lXjJm1Aw7d" crossorigin="anonymous"></script>
   <script>
     let lastScrollTop = 0;
 
@@ -152,6 +216,31 @@
       }
       lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
     });
+
+    let currentSlide = 0;
+    let totalSlides = document.querySelectorAll("#spotlightCarousel .carousel-item").length;
+
+    document.querySelector(".carousel-control-prev").addEventListener("click", function() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(currentSlide);
+    });
+
+    document.querySelector(".carousel-control-next").addEventListener("click", function() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+    });
+
+    function showSlide(slideIndex) {
+      document.querySelectorAll("#spotlightCarousel .carousel-item").forEach((item, index) => {
+        if (index === slideIndex) {
+          item.classList.add("active");
+          item.classList.add("carousel-item-slide");
+        } else {
+          item.classList.remove("active");
+          item.classList.remove("carousel-item-slide");
+        }
+      });
+    }
   </script>
 </body>
 
