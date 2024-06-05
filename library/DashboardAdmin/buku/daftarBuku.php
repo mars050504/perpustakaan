@@ -28,10 +28,10 @@ if(isset($_POST["search"]) ) {
     }
   </style>
   <body>
-  <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <img src="../../assets/logoNav.png" alt="logo" width="120px">
+      <img src="../../assets/logoNav2.png" alt="logo" width="120px">
         </a>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,9 +50,9 @@ if(isset($_POST["search"]) ) {
   </div>
 </nav>
     
-<div class="p-4 mt-4">
+<div class="p-4">
       <!--search engine --->
-     <form action="" method="post" class="mt-5">
+     <form action="" method="post" class="mt-2">
        <div class="input-group d-flex justify-content-end mb-3">
          <input class="border p-2 rounded rounded-end-0 bg-tertiary" type="text" name="keyword" id="keyword" placeholder="cari data buku...">
          <button class="border border-start-0 bg-light rounded rounded-start-0" type="submit" name="search"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -83,7 +83,7 @@ if(isset($_POST["search"]) ) {
       
       <footer class="shadow-lg bg-subtle p-3">
       <div class="container-fluid d-flex justify-content-between">
-      <p class="mt-2">Created by <span class="text-primary"> Mangandaralam Sakti</span> © 2023</p>
+      <p class="mt-2">Created by <span class="text-primary"> Kelompok 4 Pemrograman Web</span> © 2024</p>
       <p class="mt-2">versi 1.0</p>
       </div>
       </footer>
