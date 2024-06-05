@@ -128,7 +128,7 @@ if(isset($_POST["update"]) ) {
   
   <footer class="mt-5 shadow-lg bg-subtle p-3">
       <div class="container-fluid d-flex justify-content-between">
-      <p class="mt-2">Created by <span class="text-primary"> Mangandaralam Sakti</span> © 2023</p>
+      <p class="mt-2">Created by <span class="text-primary"> Kelompopk 4 Pemrograman Web</span> © 2024</p>
       <p class="mt-2">versi 1.0</p>
       </div>
     </footer>
