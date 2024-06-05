@@ -38,17 +38,17 @@ if(isset($_POST["kembalikan"]) ) {
      <title>Form Pengembalian Buku || Member</title>
   </head>
   <body>
-    <nav class="navbar fixed-top bg-body-tertiary shadow-sm">
+    <nav class="navbar bg-body-tertiary shadow-sm">
       <div class="container-fluid p-3">
         <a class="navbar-brand" href="#">
-          <img src="../../assets/logoNav.png" alt="logo" width="120px">
+          <img src="../../assets/logoNav2.png" alt="logo" width="120px">
         </a>
         
         <a class="btn btn-tertiary" href="../dashboardMember.php">Dashboard</a>
       </div>
     </nav>
     
-    <div class="p-4 mt-5">
+    <div class="p-4">
       <div class="card p-3 mt-5">
     <form action="" method="post">
     <h3>Form Pengembalian buku</h3>
