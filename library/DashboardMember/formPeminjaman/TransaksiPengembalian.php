@@ -41,18 +41,18 @@ if ($result) {
      <title>Transaksi Pengembalian Buku || Member</title>
   </head>
   <body>
-    <nav class="navbar fixed-top bg-body-tertiary shadow-sm">
+    <nav class="navbar bg-body-tertiary shadow-sm">
       <div class="container-fluid p-3">
         <a class="navbar-brand" href="#">
-          <img src="../../assets/logoNav.png" alt="logo" width="120px">
+          <img src="../../assets/logoNav2.png" alt="logo" width="120px">
         </a>
         
         <a class="btn btn-tertiary" href="../dashboardMember.php">Dashboard</a>
       </div>
     </nav>
     
-    <div class="p-4 mt-5">
-      <div class="mt-5 alert alert-primary" role="alert">Riwayat transaksi Pengembalian Buku Anda - <span class="fw-bold text-capitalize"><?php echo htmlentities($_SESSION["member"]["nama"]); ?></span></div>
+    <div class="p-4">
+      <div class="mt-2 alert alert-primary" role="alert">Riwayat transaksi Pengembalian Buku Anda - <span class="fw-bold text-capitalize"><?php echo htmlentities($_SESSION["member"]["nama"]); ?></span></div>
     <!--search engine 
      <form action="" method="post">
        <div class="searchEngine">
@@ -97,7 +97,7 @@ if ($result) {
     
     <footer class="fixed-bottom shadow-lg bg-subtle p-3">
       <div class="container-fluid d-flex justify-content-between">
-      <p class="mt-2">Created by <span class="text-primary"> Mangandaralam Sakti</span> © 2023</p>
+      <p class="mt-2">Created by <span class="text-primary"> Kelompok 4 Pemrograman Web</span> © 2024</p>
       <p class="mt-2">versi 1.0</p>
       </div>
   </footer>
