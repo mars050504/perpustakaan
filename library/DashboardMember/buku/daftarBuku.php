@@ -52,19 +52,19 @@ $buku = queryReadData("SELECT * FROM buku WHERE kategori = 'sains'");
     }
   </style>
   <body>
-    <nav class="navbar fixed-top bg-body-tertiary shadow-sm">
+    <nav class="navbar bg-body-tertiary shadow-sm">
       <div class="container-fluid p-3">
         <a class="navbar-brand" href="#">
-          <img src="../../assets/logoNav.png" alt="logo" width="120px">
+          <img src="../../assets/logoNav2.png" alt="logo" width="120px">
         </a>
         
         <a class="btn btn-tertiary" href="../dashboardMember.php">Dashboard</a>
       </div>
     </nav>
     
-     <div class="p-4 mt-5">
+     <div class="p-4">
        <!--Btn filter data kategori buku-->
-      <div class="d-flex gap-2 mt-5 justify-content-center">
+      <div class="d-flex gap-2 justify-content-center">
       <form action="" method="post">
         <div class="layout-card-custom">
          <button class="btn btn-primary" type="submit">Semua</button>
@@ -106,7 +106,7 @@ $buku = queryReadData("SELECT * FROM buku WHERE kategori = 'sains'");
      
      <footer class="shadow-lg bg-subtle p-3">
       <div class="container-fluid d-flex justify-content-between">
-      <p class="mt-2">Created by <span class="text-primary"> Mangandaralam Sakti</span> © 2023</p>
+      <p class="mt-2">Created by <span class="text-primary"> Kelompok 4 Pemrograman Web</span> © 2024</p>
       <p class="mt-2">versi 1.0</p>
       </div>
       </footer>
