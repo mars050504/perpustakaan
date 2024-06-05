@@ -34,10 +34,10 @@ if(isset($_POST["tambah"]) ) {
     }
   </style>
   <body>  
-<nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <img src="../../assets/logoNav.png" alt="logo" width="120px">
+      <img src="../../assets/logoNav2.png" alt="logo" width="120px">
         </a>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,7 +56,7 @@ if(isset($_POST["tambah"]) ) {
   </div>
 </nav>
 
-    <div class="container p-3 mt-5">
+    <div class="container p-3">
       <div class="card p-2 mt-5">
       <h1 class="text-center fw-bold p-3">Form Tambah buku</h1>
       <form action="" method="post" enctype="multipart/form-data" class="mt-3 p-2">
@@ -123,7 +123,7 @@ if(isset($_POST["tambah"]) ) {
     
   <footer class="mt-5 shadow-lg bg-subtle p-3">
       <div class="container-fluid d-flex justify-content-between">
-      <p class="mt-2">Created by <span class="text-primary"> Mangandaralam Sakti</span> © 2023</p>
+      <p class="mt-2">Created by <span class="text-primary"> Kelompok 4 Pemrograman Web</span> © 2024</p>
       <p class="mt-2">versi 1.0</p>
       </div>
     </footer>
