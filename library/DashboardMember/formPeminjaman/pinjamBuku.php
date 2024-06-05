@@ -87,18 +87,18 @@ if($result) {
     }
   </style>
   <body>
-    <nav class="navbar fixed-top bg-body-tertiary shadow-sm">
+    <nav class="navbar bg-body-tertiary shadow-sm">
       <div class="container-fluid p-3">
         <a class="navbar-brand" href="#">
-          <img src="../../assets/logoNav.png" alt="logo" width="120px">
+          <img src="../../assets/logoNav2.png" alt="logo" width="120px">
         </a>
         
         <a class="btn btn-tertiary" href="../dashboardMember.php">Dashboard</a>
       </div>
     </nav>
     
-  <div class="p-4 mt-5">
-    <h2 class="mt-5">Form peminjaman Buku</h2>
+  <div class="p-4">
+    <h2 class="mt-2">Form peminjaman Buku</h2>
     <div class="card">
       <h5 class="card-header">Data Lengkap buku</h5>
       <div class="card-body d-flex flex-wrap gap-5 justify-content-center">
@@ -231,7 +231,7 @@ if($result) {
     
     <footer class="shadow-lg bg-subtle p-3">
       <div class="container-fluid d-flex justify-content-between">
-      <p class="mt-2">Created by <span class="text-primary"> Mangandaralam Sakti</span> © 2023</p>
+      <p class="mt-2">Created by <span class="text-primary"> Kelompok 4 Pemrograman Web</span> © 2024</p>
       <p class="mt-2">versi 1.0</p>
       </div>
   </footer>
