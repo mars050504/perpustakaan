@@ -24,10 +24,10 @@ if(!isset($_SESSION["signIn"]) ) {
   }
 </style>
   <body>
-     <nav class="navbar fixed-top bg-body-tertiary shadow-sm">
+     <nav class="navbar bg-body-tertiary shadow-sm">
       <div class="container-fluid p-3">
         <a class="navbar-brand" href="#">
-          <img src="../assets/logoNav.png" alt="logo" width="120px">
+          <img src="../assets/logoNav2.png" alt="logo" width="120px">
         </a>
   
         <div class="dropdown">
@@ -52,7 +52,7 @@ if(!isset($_SESSION["signIn"]) ) {
       </div>
     </nav>
     
-    <div class="mt-5 p-4">
+    <div class="p-4">
       <?php
       // Mendapatkan tanggal dan waktu saat ini
       $date = date('Y-m-d H:i:s'); // Format tanggal dan waktu default (tahun-bulan-tanggal jam:menit:detik)
@@ -66,7 +66,7 @@ if(!isset($_SESSION["signIn"]) ) {
       $year = date('Y');
       ?>
       
-      <h1 class="mt-5 fw-bold">Dashboard - <span class="fs-4 text-secondary"> <?php echo $day. " ". $dayOfMonth." ". " ". $month. " ". $year; ?> </span></h1>
+      <h1 class="mt-2 fw-bold">Dashboard - <span class="fs-4 text-secondary"> <?php echo $day. " ". $dayOfMonth." ". " ". $month. " ". $year; ?> </span></h1>
       <div class="alert alert-success" role="alert">Selamat datang member - <span class="text-capitalize fw-bold"><?php echo $_SESSION['member']['nama']; ?> </span> di Dashboard PerpusRek</div>
       
     <div class="mt-3 p-3">
@@ -102,7 +102,7 @@ if(!isset($_SESSION["signIn"]) ) {
       
   <footer class="shadow-lg bg-subtle p-3">
       <div class="container-fluid d-flex justify-content-between">
-      <p class="mt-2">Created by <span class="text-primary"> Kelompok 4 </span> © 2024</p>
+      <p class="mt-2">Created by <span class="text-primary"> Kelompok 4 Pemrograman Web</span> © 2024</p>
       <p class="mt-2">versi 1.0</p>
       </div>
     </footer>
