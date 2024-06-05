@@ -18,19 +18,19 @@ INNER JOIN buku ON peminjaman.id_buku = buku.id_buku");
   </head>
   <body>
     
-  <nav class="navbar fixed-top bg-body-tertiary shadow-sm">
+  <nav class="navbar bg-body-tertiary shadow-sm">
       <div class="container-fluid p-3">
         <a class="navbar-brand" href="#">
-          <img src="../../assets/logoNav.png" alt="logo" width="120px">
+          <img src="../../assets/logoNav2.png" alt="logo" width="120px">
         </a>
         
         <a class="btn btn-tertiary" href="../dashboardAdmin.php">Dashboard</a>
       </div>
     </nav>
 
-    <div class="p-4 mt-5">
+    <div class="p-4">
   
-    <div class="mt-5">
+    <div class="mt-2">
     <caption>List of Peminjaman</caption>
       <div class="table-responsive mt-3">
         <table class="table table-striped table-hover">
@@ -69,7 +69,7 @@ INNER JOIN buku ON peminjaman.id_buku = buku.id_buku");
   
   <footer class="fixed-bottom shadow-lg bg-subtle p-3">
       <div class="container-fluid d-flex justify-content-between">
-      <p class="mt-2">Created by <span class="text-primary"> Mangandaralam Sakti</span> © 2023</p>
+      <p class="mt-2">Created by <span class="text-primary"> Kelompok 4 Pemrograman Web</span> © 2024</p>
       <p class="mt-2">versi 1.0</p>
       </div>
     </footer>
